@@ -14,7 +14,8 @@ html
     = csrf_meta_tags
   body
     .legend
-      h1 echo nil > me
+      h1 
+        = link_to "echo nil > me", root_path
     .main
       p.notice = notice
       p.alert = alert

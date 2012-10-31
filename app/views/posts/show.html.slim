@@ -4,7 +4,7 @@
   .info = @post.created_at.to_formatted_s(:long_ordinal)
 
   .article
-    = @post.content
+    = markdown(@post.content) 
 
 #disqus_thread
 

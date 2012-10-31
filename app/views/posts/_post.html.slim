@@ -6,4 +6,4 @@ li
     = post.created_at.to_date.to_formatted_s(:long)
 
   .content
-    = post.content
+    = markdown post.content

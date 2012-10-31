@@ -9,6 +9,8 @@ gem 'slim-rails'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'devise'
+gem 'redcarpet'
+gem 'coderay'
 
 group :development, :test do
   gem 'sqlite3'

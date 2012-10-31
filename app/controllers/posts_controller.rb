@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post
     else
-      render action: new
+      render action: 'new'
     end
   end
 
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
     if @post.update_attributes(params[:post])
       redirect_to @post
     else
-      render action: edit
+      render action: 'edit'
     end
   end
 end
