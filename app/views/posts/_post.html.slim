@@ -1,9 +1,9 @@
 li
   .title
-    = post.title
-    | Title
+    h2
+      = link_to post.title, "#"
   .info
-    = post.created_at
+    = post.created_at.to_date.to_formatted_s(:short)
 
   .content
     = post.content
