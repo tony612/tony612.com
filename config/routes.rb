@@ -1,5 +1,5 @@
 Tony612Com::Application.routes.draw do
-  resources :posts, only: [:index, :show]
+  resources :posts
 
   root to: "posts#index"
 end
