@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :authenticate_admin!, :only => [:new, :create, :edit, :upadte]
   def index
     @posts = Post.order("created_at DESC")
   end

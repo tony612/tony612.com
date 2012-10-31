@@ -1,5 +1,7 @@
 Tony612Com::Application.routes.draw do
-  resources :posts
+  devise_for :admins
 
+  resources :posts
+  resources :admins, :only => [:show]
   root to: "posts#index"
 end
