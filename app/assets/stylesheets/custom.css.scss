@@ -35,7 +35,7 @@ body {
 
 .sidebar {
   float:left;
-
+  position: fixed;
   width: 20%;
   //height: 100%;
   margin-top: 250px;
@@ -45,6 +45,7 @@ body {
     float:right;
     padding-right: 10px;
     a {
+      float:right;
       color: #000;
       text-decoration: none;
       font-style: italic;
@@ -70,6 +71,10 @@ body {
     li {
       margin-bottom: 10px;
     }
+  }
+
+  a{
+    color: #000;
   }
 }
 

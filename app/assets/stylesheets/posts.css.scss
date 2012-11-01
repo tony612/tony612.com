@@ -2,7 +2,7 @@ ul.posts {
   margin-top: -20px;
   list-style-type: none;
   
-  li {
+  > li {
     padding: 30px 0px;
     border-bottom: 1px solid #DDD;
     
@@ -13,6 +13,16 @@ ul.posts {
 
     &:last-child {
       border-bottom: none;
+    }
+
+    .more {
+      margin-top: 10px;
+      a{
+        padding: 5px 20px;
+        background-color: #000;
+        color: #fff;
+        font-style:bold;
+      }
     }
   }
 }
