@@ -27,6 +27,9 @@ body {
   color: #777;
   font-size:15px;
   font-style: italic;
+  a {
+    color: #000;
+  }
 }
 
 .debug {
@@ -36,9 +39,9 @@ body {
 .sidebar {
   float:left;
   position: fixed;
+  bottom: 10px;
   width: 20%;
   //height: 100%;
-  margin-top: 250px;
   border-right: 1px solid #999;
   ul {
     margin:0px;
