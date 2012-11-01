@@ -16,6 +16,8 @@ html
     .legend
       h1 
         = link_to "echo nil > me", root_path
+    .sidebar
+      = render "layouts/sidebar"
     .main
       p.notice = notice
       p.alert = alert
