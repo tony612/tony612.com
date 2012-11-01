@@ -4,12 +4,13 @@ module ApplicationHelper
     coderayified = HTMLwithCodeRay.new(:filter_html => true, :hard_wrap => true)
     options = {   
       :autolink => true, 
-      :space_after_headers => true,
+      #:space_after_headers => true,
       :fenced_code_blocks => true,
       :no_intra_emphasis => true,
       :strikethrough =>true,
-      #:lax_html_blocks => true,
-      #:superscript => true
+      
+      :lax_html_blocks => true,
+      :superscript => true
     }
     #markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,options)
     markdown = Redcarpet::Markdown.new(coderayified,options)
