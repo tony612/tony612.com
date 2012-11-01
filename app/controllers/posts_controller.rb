@@ -26,7 +26,7 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
     
     if @post.save
-      redirect_to @post
+      redirect_to post_path(@post.title)
     else
       render action: 'new'
     end
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update_attributes(params[:post])
-      redirect_to @post
+      redirect_to post_path(@post.title)
     else
       render action: 'edit'
     end
