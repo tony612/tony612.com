@@ -4,6 +4,16 @@ class PostsController < ApplicationController
     @posts = Post.order("created_at DESC").page(params[:page]).per(5)
   end
 
+  def life
+    @posts = Post.order("created_at DESC").where(category: "life").page(params[:page]).per(5)
+    render action: :index
+  end
+
+  def tech
+    @posts = Post.order("created_at DESC").where(category: "tech").page(params[:page]).per(5)
+    render action: :index
+  end
+
   def show
     @post = Post.find(params[:id])
   end

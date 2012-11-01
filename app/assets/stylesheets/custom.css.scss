@@ -39,7 +39,7 @@ body {
   width: 20%;
   //height: 100%;
   margin-top: 250px;
-  border-right: 1px solid #000;
+  border-right: 1px solid #999;
   ul {
     margin:0px;
     float:right;
@@ -47,6 +47,8 @@ body {
     a {
       color: #000;
       text-decoration: none;
+      font-style: italic;
+      font-size: 18px;
     }
   }
 
@@ -60,8 +62,11 @@ body {
 
 .about {
   margin-top: 40px;
+  .photo { float:left;}
   ul {
-    margin-left:-40px;
+    width: 60%;
+    margin-left:300px;
+    margin-right:0;
     li {
       margin-bottom: 10px;
     }
