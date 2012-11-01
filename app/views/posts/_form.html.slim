@@ -1,5 +1,5 @@
 = simple_form_for @post do |f|
   = f.input :title, label: false
-  = f.input :content, label: false
+  = f.input :content, label: false, input_html: {style:"width: 700px;height: 1000px;"}
   = f.input :created_at, label: false
   = f.submit

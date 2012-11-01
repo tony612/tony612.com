@@ -1,7 +1,11 @@
 #post
   h1 = @post.title
 
-  .info = @post.created_at.to_formatted_s(:long_ordinal)
+  .info 
+    = @post.created_at.to_formatted_s(:long_ordinal)
+    '
+    - if admin_signed_in?
+      = link_to "edit", edit_post_path(@post)
 
   .article
     = markdown(@post.content) 

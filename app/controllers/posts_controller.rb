@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_filter :authenticate_admin!, :only => [:new, :create, :edit, :upadte]
   def index
-    @posts = Post.order("created_at DESC")
+    @posts = Post.order("created_at DESC").page(params[:page]).per(5)
   end
 
   def show

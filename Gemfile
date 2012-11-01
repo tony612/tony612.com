@@ -11,6 +11,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'redcarpet'
 gem 'coderay'
+gem 'kaminari'
 
 group :development, :test do
   gem 'sqlite3'
