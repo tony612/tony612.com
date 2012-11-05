@@ -20,7 +20,7 @@ module ApplicationHelper
   class HTMLwithCodeRay < Redcarpet::Render::HTML
     include Redcarpet::Render::SmartyPants
     def block_code(code, language)
-      CodeRay.scan(code, language).div(:tab_width=>2, :line_numbers => :table)
+      CodeRay.scan(code, language).div(:tab_width=>2)
     end
   end
 

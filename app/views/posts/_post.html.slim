@@ -1,7 +1,7 @@
 li
   .title
     h1
-      = link_to post.title, post_path(post.title)
+      = link_to post.title, post
   .info
     = post.created_at.to_date.to_formatted_s(:long)
     '
@@ -11,4 +11,4 @@ li
   .content
     = markdown post.content[0..500]
   .more
-    = link_to "More->", post_path(post.title)
+    = link_to "More->", post
