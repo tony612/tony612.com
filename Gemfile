@@ -10,7 +10,8 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'devise'
 gem 'redcarpet'
-gem 'coderay'
+#gem 'coderay'
+gem 'albino'
 gem 'kaminari'
 
 group :development, :test do
