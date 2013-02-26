@@ -14,6 +14,9 @@ gem 'redcarpet'
 gem 'albino'
 gem 'kaminari'
 
+# For rails 4
+gem 'protected_attributes'
+
 group :development, :test do
   gem 'sqlite3'
   #gem 'rspec-rails'
