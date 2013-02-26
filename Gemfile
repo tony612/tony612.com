@@ -8,11 +8,15 @@ gem "rails", "~> 4.0.0.beta1"
 gem 'slim-rails'
 gem 'jquery-rails'
 gem "simple_form", "~> 3.0.0.beta1"
+gem "devise"
 gem 'devise'
 gem 'redcarpet'
 #gem 'coderay'
 gem 'albino'
 gem 'kaminari'
+
+# Deploy
+gem "capistrano", "~> 2.14.2"
 
 # For rails 4
 gem 'protected_attributes'
