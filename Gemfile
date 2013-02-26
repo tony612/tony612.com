@@ -1,18 +1,25 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem "rails", "~> 4.0.0.beta1"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'slim-rails'
 gem 'jquery-rails'
-gem 'simple_form'
+gem "simple_form", "~> 3.0.0.beta1"
+gem "devise"
 gem 'devise'
 gem 'redcarpet'
 #gem 'coderay'
 gem 'albino'
 gem 'kaminari'
+
+# Deploy
+gem "capistrano", "~> 2.14.2"
+
+# For rails 4
+gem 'protected_attributes'
 
 group :development, :test do
   gem 'sqlite3'
@@ -30,9 +37,9 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem "sass-rails", "~> 4.0.0.beta1"
+  gem "coffee-rails", "~> 4.0.0.beta1"
+  gem 'uglifier'
 end
 
 
