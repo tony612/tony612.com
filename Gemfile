@@ -7,7 +7,7 @@ gem "rails", "~> 4.0.0.beta1"
 
 gem 'slim-rails'
 gem 'jquery-rails'
-gem 'simple_form'
+gem "simple_form", "~> 3.0.0.beta1"
 gem 'devise'
 gem 'redcarpet'
 #gem 'coderay'
