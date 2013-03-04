@@ -31,7 +31,7 @@ role :app, app_server                          # This may be the same as your `W
 role :db,  app_server, :primary => true # This is where Rails migrations will run
 # role :db,  "your slave db-server here"
 
-set :deploy_to, "/var/www/ib5k-web"
+set :deploy_to, "/var/www/tony612"
 set :deploy_via, :remote_cache
 set :user, "tony"
 set :use_sudo, false
