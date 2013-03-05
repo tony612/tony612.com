@@ -24,6 +24,8 @@ gem "rvm-capistrano"
 # For rails 4
 gem 'protected_attributes'
 
+gem 'turbolinks'
+
 group :development, :test do
   gem 'sqlite3'
   #gem 'rspec-rails'
