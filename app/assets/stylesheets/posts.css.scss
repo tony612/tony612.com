@@ -1,13 +1,14 @@
+$grey: #DDD;
 ul.posts {
   margin-top: -20px;
   list-style-type: none;
-  
+
   > li {
     padding: 30px 0px;
-    border-bottom: 1px solid #DDD;
-    
+    border-bottom: 1px solid $grey;
+
     a{
-      color: #000;
+      color: black;
       text-decoration: none;
     }
 
@@ -19,8 +20,8 @@ ul.posts {
       margin-top: 10px;
       a{
         padding: 5px 20px;
-        background-color: #000;
-        color: #fff;
+        background-color: white;
+        color: white;
         font-style:bold;
       }
     }
@@ -36,12 +37,12 @@ ul.posts {
   .article {
     padding-top: 20px;
     a {
-      color: #000;
+      color: black;
       text-decoration: none;
     }
   }
 
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid $grey;
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
