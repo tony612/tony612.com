@@ -15,10 +15,10 @@ gem 'albino'
 gem 'kaminari'
 
 # Deploy
-gem "capistrano", "~> 2.14.2"
+#gem "capistrano", "~> 2.14.2"
 
 # RVM with capistrano
-gem "rvm-capistrano"
+#gem "rvm-capistrano"
 
 # For rails 4
 gem 'turbolinks'
