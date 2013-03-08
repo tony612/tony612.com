@@ -4,6 +4,6 @@ class Post < ActiveRecord::Base
   validates_presence_of :title, :content
 
   def to_param
-    "#{id}-#{title.gsub(/\s/, '-')}"
+    "#{id}-#{title.gsub(/\s/, '-').gsub(/\./, '-')}"
   end
 end
