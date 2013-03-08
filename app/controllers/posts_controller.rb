@@ -20,11 +20,11 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-  end 
+  end
 
   def create
-    @post = Post.new(params[:post])
-       
+    @post = Post.new(post_params)
+
     if @post.save
       redirect_to @post
     else
@@ -39,10 +39,16 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
-    if @post.update_attributes(params[:post])
+    if @post.update_attributes(post_params)
       redirect_to @post
     else
       render action: 'edit'
     end
   end
+
+  private
+
+    def post_params
+      params.require(:post).permit(:title, :content, :created_at, :category)
+    end
 end

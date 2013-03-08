@@ -4,7 +4,7 @@ class DeviseCreateAdmins < ActiveRecord::Migration
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
       t.string :encrypted_password, :null => false, :default => ""
-      
+
       # Admin
       t.boolean :admin, :default => false
 
@@ -38,6 +38,9 @@ class DeviseCreateAdmins < ActiveRecord::Migration
 
       ## Token authenticatable
       # t.string :authentication_token
+
+      ## Invitable
+      # t.string :invitation_token
 
 
       t.timestamps
