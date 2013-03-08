@@ -8,8 +8,7 @@ gem "rails", "~> 4.0.0.beta1"
 gem 'slim-rails'
 gem 'jquery-rails'
 gem "simple_form", "~> 3.0.0.beta1"
-gem "devise"
-gem 'devise'
+gem "devise", :git => "git://github.com/plataformatec/devise.git", :branch => "rails4"
 gem 'redcarpet'
 #gem 'coderay'
 gem 'albino'
@@ -31,6 +30,9 @@ group :development, :test do
   #gem 'capybara'
   #gem 'factory_girl_rails'
   #gem 'faker'
+#gem "debugger", "~> 1.4.0"
+#gem 'pry-debugger', "~> 0.2.2"
+  gem 'pry-rails', "~> 0.2.2"
 end
 
 group :production do
