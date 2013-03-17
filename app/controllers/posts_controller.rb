@@ -1,21 +1,39 @@
 class PostsController < ApplicationController
   before_filter :authenticate_admin!, :only => [:new, :create, :edit, :upadte]
   def index
-    @posts = Post.order("created_at DESC").page(params[:page]).per(5)
+    @posts = Post.order_by_time.page(params[:page]).per(5)
+
+    respond_to do |f|
+      f.html
+      f.json { render :json => @posts.map { |p| {:id => p.id, :title => p.title} }.to_json }
+    end
   end
 
   def life
-    @posts = Post.order("created_at DESC").where(category: "life").page(params[:page]).per(5)
-    render action: :index
+    @posts = Post.life.page(params[:page]).per(5)
+
+    respond_to do |f|
+      f.html { render action: :index }
+      f.json { render :json => @posts.map { |p| {:id => p.id, :title => p.title} }.to_json }
+    end
   end
 
   def tech
-    @posts = Post.order("created_at DESC").where(category: "tech").page(params[:page]).per(5)
-    render action: :index
+    @posts = Post.tech.page(params[:page]).per(5)
+
+    respond_to do |f|
+      f.html { render action: :index }
+      f.json { render :json => @posts.map { |p| {:id => p.id, :title => p.title} }.to_json }
+    end
   end
 
   def show
     @post = Post.find(params[:id])
+
+    respond_to do |f|
+      f.html
+      f.json { render :json => @post.to_json }
+    end
   end
 
   def new
