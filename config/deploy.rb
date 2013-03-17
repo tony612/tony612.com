@@ -60,7 +60,7 @@ task :deploy => :environment do
     invoke :'rails:assets_precompile'
 
     to :launch do
-      queue 'touch tmp/restart.txt'
+      queue "touch #{deploy_to}/tmp/restart.txt"
     end
 
     # This optional block defines how a broken release should be cleaned up.
