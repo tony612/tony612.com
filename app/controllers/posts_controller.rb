@@ -1,16 +1,16 @@
 class PostsController < ApplicationController
   before_filter :authenticate_admin!, :only => [:new, :create, :edit, :upadte]
   def index
-    @posts = Post.order("created_at DESC").page(params[:page]).per(5)
+    @posts = Post.order_by_time.page(params[:page]).per(5)
   end
 
   def life
-    @posts = Post.order("created_at DESC").where(category: "life").page(params[:page]).per(5)
+    @posts = Post.life.page(params[:page]).per(5)
     render action: :index
   end
 
   def tech
-    @posts = Post.order("created_at DESC").where(category: "tech").page(params[:page]).per(5)
+    @posts = Post.tech.page(params[:page]).per(5)
     render action: :index
   end
 
