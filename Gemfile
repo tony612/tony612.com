@@ -30,8 +30,7 @@ group :development, :test do
   #gem 'capybara'
   #gem 'factory_girl_rails'
   #gem 'faker'
-#gem "debugger", "~> 1.4.0"
-#gem 'pry-debugger', "~> 0.2.2"
+  gem 'pry-debugger', "~> 0.2.2"
   gem 'pry-rails', "~> 0.2.2"
 end
 
