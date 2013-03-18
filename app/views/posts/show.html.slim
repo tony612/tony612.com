@@ -1,7 +1,7 @@
 #post
   h1 = @post.title
 
-  .info 
+  .info
     = @post.created_at.to_formatted_s(:long_ordinal)
     '
     = link_to "Comments", post_path(@post.title, :anchor => "disqus_thread")
@@ -21,7 +21,7 @@
       = link_to "edit", edit_post_path(@post)
 
   .article
-    = markdown(@post.content) 
+    = raw @post.markdown_html || ""
 
 #disqus_thread
 
