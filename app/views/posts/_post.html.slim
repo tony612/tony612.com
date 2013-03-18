@@ -9,6 +9,6 @@ li
       = link_to "edit", edit_post_path(post)
 
   .content
-    = markdown post.content[0..500], true
+    = raw post.markdown_html[0..500]
   .more
     = link_to "More->", post
