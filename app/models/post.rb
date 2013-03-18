@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  #attr_accessible :content, :title, :created_at, :category, :markdown_html
+  #attr_accessible :content, :title, :created_at, :category, :markdown_html, :excerpt_markdown
 
   validates_presence_of :title, :content
 
@@ -16,5 +16,6 @@ class Post < ActiveRecord::Base
   before_save :generate_markdown_html
   def generate_markdown_html
     self.markdown_html = markdown(self.content)
+    self.excerpt_markdown = markdown(self.excerpt)
   end
 end

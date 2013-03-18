@@ -2,5 +2,7 @@
   = f.input :title, label: false
   = f.input :category, label: false, collection: ["life", "tech"]
   = f.input :content, label: false, input_html: {style:"width: 700px;height: 1000px;"}
+  = f.label :excerpt
+  = f.input :excerpt, label: false, input_html: {style:"width: 700px;height: 400px;"}
   = f.input :created_at, label: false
   = f.submit
