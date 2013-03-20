@@ -15,7 +15,7 @@ class Post < ActiveRecord::Base
 
   before_save :generate_markdown_html
   def generate_markdown_html
-    self.markdown_html = markdown(self.content)
-    self.excerpt_markdown = markdown(self.excerpt)
+    self.markdown_html = markdown(self.content || "")
+    self.excerpt_markdown = markdown(self.excerpt || "")
   end
 end
