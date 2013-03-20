@@ -31,7 +31,7 @@ task :environment do
   # invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
-  invoke :'rvm:use[ruby-2.0.0-preview1]'
+  invoke :'rvm:use[ruby-2.0.0-p0]'
 end
 
 # Put any custom mkdir's in here for when `mina setup` is ran.
