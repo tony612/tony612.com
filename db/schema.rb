@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20130318161626) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -21,21 +24,21 @@ ActiveRecord::Schema.define(version: 20130318161626) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string   "password_salt"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
   create_table "posts", force: true do |t|
-    t.string   "title",            null: false
-    t.text     "content",          null: false
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.string   "title",                         null: false
+    t.text     "content",                       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "category"
-    t.text     "excerpt"
-    t.text     "excerpt_markdown"
+    t.text     "excerpt",          default: ""
+    t.text     "excerpt_markdown", default: ""
     t.text     "markdown_html"
   end
 
