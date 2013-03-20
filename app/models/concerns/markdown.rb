@@ -2,8 +2,7 @@ module Markdown
   extend ActiveSupport::Concern
 
   def markdown(text, index = false)
-    #coderayified = HTMLwithCodeRay.new(:filter_html => true, :hard_wrap => true)
-    albinoified = HTMLwithAlbino.new(:filter_html => true, :hard_wrap => true, :gh_blockcode => true)
+    pygments_style = HTMLwithPygments.new(:filter_html => true, :hard_wrap => true, :gh_blockcode => true)
     options = {
       :autolink => true,
       #:space_after_headers => true,
@@ -15,21 +14,14 @@ module Markdown
     }
     options[:fenced_code_blocks] = false if index
     #markdown = Redcarpet::Markdown.new(coderayified,options)
-    markdown = Redcarpet::Markdown.new(albinoified, options)
+    markdown = Redcarpet::Markdown.new(pygments_style, options)
     markdown.render(text).html_safe
   end
 
-  class HTMLwithCodeRay < Redcarpet::Render::HTML
-    include Redcarpet::Render::SmartyPants
-    def block_code(code, language)
-      CodeRay.scan(code, language).div(:tab_width=>2)
-    end
-  end
-
-  class HTMLwithAlbino < Redcarpet::Render::HTML
+  class HTMLwithPygments < Redcarpet::Render::HTML
     include Redcarpet::Render::SmartyPants
     def block_code(code ,language)
-      Albino.colorize(code, language)
+      Pygments.highlight(code, :lexer => language || "ruby", :options => {:encoding => 'utf-8'})
     end
   end
 end
