@@ -10,8 +10,7 @@ gem 'jquery-rails'
 gem "simple_form", "~> 3.0.0.beta1"
 gem "devise", :git => "git://github.com/plataformatec/devise.git", :branch => "rails4"
 gem 'redcarpet'
-#gem 'coderay'
-gem 'albino'
+gem "pygments.rb", "~> 0.4.2"
 gem 'kaminari'
 
 # Deploy
