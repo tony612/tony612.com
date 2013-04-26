@@ -2,10 +2,10 @@ ul
   li = link_to "About", about_path
   li = link_to "Life", life_path
   li = link_to "Tech", tech_path
-  br
-  - if admin_signed_in?
-    = link_to "Logout", destroy_admin_session_path, :method => :delete
   - (0..14).each do |i|
     br
+  - if admin_signed_in?
+    li = link_to "Write", new_post_path
+    li = link_to "Logout", destroy_admin_session_path, :method => :delete
   li by Tony
 
