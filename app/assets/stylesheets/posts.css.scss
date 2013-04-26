@@ -1,9 +1,17 @@
 $grey: #DDD;
+$bright_blue: #007FFF;
+@mixin border-radius($x: 4px){
+  -webkit-border-radius: $x;
+  -moz-border-radius: $x;
+  -ms-border-radius: $x;
+  -o-border-radius: $x;
+  border-radius: $x;
+}
 ul.posts {
   margin-top: -20px;
   list-style-type: none;
 
-  > li {
+  & > li {
     padding: 30px 0px;
     border-bottom: 1px solid $grey;
 
@@ -21,6 +29,15 @@ ul.posts {
       }
     }
   }
+}
+
+code {
+  padding: 2px 5px;
+  margin: 0 2px;
+  @include border-radius;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  color: #d02728;
 }
 
 #post {
