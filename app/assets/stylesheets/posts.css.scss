@@ -7,11 +7,6 @@ ul.posts {
     padding: 30px 0px;
     border-bottom: 1px solid $grey;
 
-    a{
-      color: black;
-      text-decoration: none;
-    }
-
     &:last-child {
       border-bottom: none;
     }

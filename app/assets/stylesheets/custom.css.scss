@@ -1,3 +1,12 @@
+$a_transition_time: 0.2s;
+$bright_blue: #007FFF;
+@mixin transition($x: 0.5s) {
+  -o-transition: $x;
+  -ms-transition: $x;
+  -moz-transition: $x;
+  -webkit-transition: $x;
+  transition: $x;
+}
 body {
   height: 100%;
   margin: 0;
@@ -9,15 +18,24 @@ body {
   margin: -80px 50px 0 0;
 }
 
+a{
+  color: black;
+  text-decoration: none;
+  @include transition($a_transition_time);
+  &:hover {
+    color: $bright_blue;
+  }
+}
+
 .legend {
   margin-top:-50px;
   width: 70%;
   float: right;
   margin-right: 50px;
   font-size: 60px;
-  a {
+  a:hover {
     color: black;
-    text-decoration: none;
+    opacity: 0.7;
   }
 }
 
@@ -27,9 +45,6 @@ body {
   color: #777;
   font-size:15px;
   font-style: italic;
-  a {
-    color: black;
-  }
 }
 
 .debug {
@@ -49,8 +64,6 @@ body {
     padding-right: 10px;
     a {
       float:right;
-      color: black;
-      text-decoration: none;
       font-style: italic;
       font-size: 18px;
     }
@@ -76,16 +89,13 @@ body {
     }
   }
 
-  a{
-    color: black;
-  }
 }
 
 .pagination {
   margin-left: 40px;
   margin-bottom: 30px;
   a {
-    color: black;
     font-style: italic;
+    text-decoration: underline;
   }
 }
