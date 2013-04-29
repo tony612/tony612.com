@@ -60,7 +60,8 @@ task :deploy => :environment do
     invoke :'rails:assets_precompile'
 
     to :launch do
-      queue "touch #{deploy_to}/tmp/restart.txt"
+      queue "mkdir #{deploy_to}/current/tmp"
+      queue "touch #{deploy_to}/current/tmp/restart.txt"
     end
 
     # This optional block defines how a broken release should be cleaned up.
@@ -74,6 +75,11 @@ desc "check the log"
 task :logs do
   queue 'echo "Contents of the log file are as follows:"'
   queue "tail -f #{deploy_to}/current/log/production.log"
+end
+
+desc "restart passenger"
+task :restart_passenger do
+  queue "touch #{deploy_to}/current/tmp/restart.txt"
 end
 
 # For help in making your deploy script, see the Mina documentation:
