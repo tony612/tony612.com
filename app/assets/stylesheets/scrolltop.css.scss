@@ -1,5 +1,5 @@
 /*
-Back to top button 
+Back to top button
 */
 #back-top {
 	position: fixed;
@@ -30,7 +30,7 @@ Back to top button
 	height: 48px;
 	display: block;
 	margin-bottom: 7px;
-	background: #ddd url(up-arrow.png) no-repeat center center;
+	background: #ddd image-url("up-arrow.png") no-repeat center center;
 	/* rounded corners */
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
