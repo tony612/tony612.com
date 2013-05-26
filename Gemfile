@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
-gem "rails", "~> 4.0.0.beta1"
+gem "rails", "~> 4.0.0.rc1"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'slim-rails'
 gem 'jquery-rails'
-gem "simple_form", "~> 3.0.0.beta1"
-gem "devise", :git => "git://github.com/plataformatec/devise.git", :branch => "rails4"
+gem "simple_form", "~> 3.0.0.rc"
+gem "devise", "~> 3.0.0.rc"
 gem 'redcarpet'
 gem "pygments.rb", "~> 0.4.2"
 gem 'kaminari'
@@ -40,23 +40,7 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem "sass-rails", "~> 4.0.0.beta1"
-  gem "coffee-rails", "~> 4.0.0.beta1"
+  gem "sass-rails", "~> 4.0.0.rc1"
+  gem "coffee-rails", "~> 4.0.0"
   gem 'uglifier'
 end
-
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
