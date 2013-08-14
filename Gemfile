@@ -14,6 +14,10 @@ gem 'redcarpet', '~> 3.0.0'
 gem "pygments.rb", "~> 0.4.2"
 gem 'kaminari', '~> 0.14.1'
 
+# New Relic provides you with deep information about the performance of your web application as it runs in production
+# https://github.com/newrelic/rpm
+gem "newrelic_rpm", "~> 3.6.6.147"
+
 # Deploy
 #gem "capistrano", "~> 2.14.2"
 
