@@ -1,5 +1,4 @@
-$(document).on "page:change", ->
-
+setScroll = ->
   # hide #back-top first
   $("#back-top").hide()
 
@@ -17,3 +16,10 @@ $(document).on "page:change", ->
         scrollTop: 0
       }, 800)
       return false
+
+# hide #back-top first
+$(document).ready ->
+  setScroll()
+
+$(document).on "page:change", ->
+  setScroll()
