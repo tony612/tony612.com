@@ -12,6 +12,11 @@ body {
   margin: 0;
   //overflow: hidden;
 }
+blockquote {
+  margin: 1em 0;
+  border-left: 4px solid #DDD;
+  padding: 0 20px;
+}
 .main {
   width: 70%;
   float: right;
