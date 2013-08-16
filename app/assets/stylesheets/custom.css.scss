@@ -12,6 +12,9 @@ body {
   margin: 0;
   //overflow: hidden;
 }
+ul.unstyled {
+  list-style: none;
+}
 blockquote {
   margin: 1em 0;
   border-left: 4px solid #DDD;
