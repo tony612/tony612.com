@@ -8,24 +8,24 @@ doctype 5
 html
   head
     title Tony612
-    
+
     = stylesheet_link_tag :application, :media => "all"
     = javascript_include_tag :application
     = csrf_meta_tags
   body#top
     .legend
-      h1 
+      h1
         = link_to "echo nil > me", root_path
     .sidebar
       = render "layouts/sidebar"
-       
+
     .main
       p.notice = notice
       p.alert = alert
       = yield
       p#back-top
         a href="#top"
-          span  
+          span
 
     /.debug
       - if Rails.env.development?
