@@ -1,4 +1,5 @@
-ul.posts
-  = render partial: "post", collection: @posts
+- cache cache_key_for_posts(@posts) do
+  ul.posts
+    = render partial: "post", collection: @posts
 
-= paginate @posts
+  = paginate @posts
