@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
   include Markdown
 
   def to_param
-    "#{id}-#{title.gsub(/\s/, '-').gsub(/\./, '-')}"
+    "#{id}-#{CGI::escape(title.gsub(/\s+/, '-').gsub(/\.+/, '-'))}"
   end
 
   before_save :generate_markdown_html
