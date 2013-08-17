@@ -1,14 +1,15 @@
-li
-  .title
-    h1
-      = link_to post.title, post
-  .info
-    = post.created_at.to_date.to_formatted_s(:long)
-    '
-    - if admin_signed_in?
-      = link_to "edit", edit_post_path(post)
+- cache ["list", post] do
+  li
+    .title
+      h1
+        = link_to post.title, post
+    .info
+      = post.created_at.to_date.to_formatted_s(:long)
+      '
+      - if admin_signed_in?
+        = link_to "edit", edit_post_path(post)
 
-  .content
-    = raw (post.excerpt_markdown || post.markdown_html[0..500])
-  .more
-    = link_to "More->", post
+    .content
+      = raw (post.excerpt_markdown || post.markdown_html[0..500])
+    .more
+      = link_to "More->", post
