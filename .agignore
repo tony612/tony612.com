@@ -1,0 +1,5 @@
+log/*.log
+tmp
+public/system/
+public/permalink
+public/saved_geojson
