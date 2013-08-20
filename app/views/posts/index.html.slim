@@ -1,4 +1,4 @@
-- cache cache_key_for_posts(@posts) do
+- cache @posts do
   ul.posts
     = render partial: "post", collection: @posts
 
