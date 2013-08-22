@@ -1,4 +1,7 @@
-- content_for :head, auto_discovery_link_tag(:atom, posts_url(format: :atom))
+- content_for :auto_discovery_feed do
+  = auto_discovery_link_tag :atom, posts_url(format: :atom)
+  = auto_discovery_link_tag :rss, posts_url(format: :rss)
+
 - cache @posts do
   ul.posts
     = render partial: "post", collection: @posts

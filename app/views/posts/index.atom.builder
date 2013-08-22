@@ -1,5 +1,5 @@
 atom_feed do |feed|
-  feed.title("My great blog!")
+  feed.title("Tony612 Blog")
   feed.updated(@posts[0].created_at) if @posts.length > 0
 
   @posts.each do |post|

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   respond_to :html, :json
-  respond_to :atom, only: :index
+  respond_to :atom, :rss, only: :index
 
   before_filter :authenticate_admin!, :only => [:new, :create, :edit, :upadte]
 
