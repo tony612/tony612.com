@@ -2,6 +2,7 @@ ul.unstyled
   li = link_to "About", about_path
   li = link_to "Life", life_path
   li = link_to "Tech", tech_path
+  li = link_to "Feed", posts_path(format: :atom)
   - (0..14).each do |i|
     br
   - if admin_signed_in?

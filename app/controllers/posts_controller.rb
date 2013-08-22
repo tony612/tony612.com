@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
-  before_filter :authenticate_admin!, :only => [:new, :create, :edit, :upadte]
   respond_to :html, :json
+  respond_to :atom, only: :index
+
+  before_filter :authenticate_admin!, :only => [:new, :create, :edit, :upadte]
+
   def index
     @posts = Post.order_by_time.page(params[:page]).per(5)
 
