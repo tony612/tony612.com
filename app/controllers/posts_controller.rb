@@ -13,13 +13,17 @@ class PostsController < ApplicationController
   def life
     @posts = Post.life.page(params[:page]).per(5)
 
-    respond_with @posts, action: :index
+    respond_with @posts do |format|
+      format.html { render :index }
+    end
   end
 
   def tech
     @posts = Post.tech.page(params[:page]).per(5)
 
-    respond_with @posts, action: :index
+    respond_with @posts do |format|
+      format.html { render :index }
+    end
   end
 
   def show
