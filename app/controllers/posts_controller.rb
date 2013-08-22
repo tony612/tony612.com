@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
-  before_filter :authenticate_admin!, :only => [:new, :create, :edit, :upadte]
   respond_to :html, :json
+  respond_to :atom, :rss, only: :index
+
+  before_filter :authenticate_admin!, :only => [:new, :create, :edit, :upadte]
+
   def index
     @posts = Post.order_by_time.page(params[:page]).per(5)
 
@@ -10,13 +13,17 @@ class PostsController < ApplicationController
   def life
     @posts = Post.life.page(params[:page]).per(5)
 
-    respond_with @posts, action: :index
+    respond_with @posts do |format|
+      format.html { render :index }
+    end
   end
 
   def tech
     @posts = Post.tech.page(params[:page]).per(5)
 
-    respond_with @posts, action: :index
+    respond_with @posts do |format|
+      format.html { render :index }
+    end
   end
 
   def show
