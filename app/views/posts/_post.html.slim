@@ -8,6 +8,8 @@
       '
       - if admin_signed_in?
         = link_to "edit", edit_post_path(post)
+        | &nbsp;
+        = link_to "delete", post_path(post), :method => :delete
 
     .content
       = raw (post.excerpt_markdown || post.markdown_html[0..500])
