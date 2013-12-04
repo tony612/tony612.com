@@ -7,7 +7,7 @@ pre { padding: 10px;
 -o-border-radius: 4px;
 border-radius: 4px;}
 .hll { background-color: #ffffcc }
-.c { color: #465457; } /* Comment */
+.c { color: #869497; } /* Comment */
 .err { color: #F8F8F2; } /* Error */
 .g { color: #F8F8F2; } /* Generic */
 .k { color: #F92672; font-weight: bold; } /* Keyword */
@@ -16,10 +16,10 @@ border-radius: 4px;}
 .o { color: #F8F8F2; } /* Operator */
 .x { color: #F8F8F2; } /* Other */
 .p { color: #F8F8F2; } /* Punctuation */
-.cm { color: #465457; } /* Comment.Multiline */
+.cm { color: #869497; } /* Comment.Multiline */
 .cp { color: #A6E22E; } /* Comment.Preproc */
-.c1 { color: #465457; } /* Comment.Single */
-.cs { color: #465457; } /* Comment.Special */
+.c1 { color: #869497; } /* Comment.Single */
+.cs { color: #869497; } /* Comment.Special */
 .gd { color: #960050; background-color: #1E0010 } /* Generic.Deleted */
 .ge { color: #808080; text-decoration: underline; } /* Generic.Emph */
 .gr { color: #960050; background-color: #1E0010 } /* Generic.Error */
