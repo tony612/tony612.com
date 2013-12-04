@@ -1,14 +1,14 @@
 # source 'https://rubygems.org'
 source 'http://ruby.taobao.org'
 
-gem "rails", "~> 4.0.0"
+gem "rails", "~> 4.0.2"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'slim-rails', '~> 2.0.1'
+gem 'slim-rails', '~> 2.0.3'
 gem 'jquery-rails', '~> 3.0.4'
-gem "simple_form", "~> 3.0.0.rc"
+gem "simple_form", "~> 3.0.1"
 gem "devise", "~> 3.0.2"
 gem 'redcarpet', '~> 3.0.0'
 gem "pygments.rb", "~> 0.4.2"
@@ -25,7 +25,7 @@ gem "newrelic_rpm", "~> 3.6.6.147"
 #gem "rvm-capistrano"
 
 # For rails 4
-gem 'turbolinks', "~> 1.3.0"
+gem 'turbolinks', "~> 1.3.1"
 
 group :development, :test do
   gem 'sqlite3'
