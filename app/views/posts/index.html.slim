@@ -2,7 +2,7 @@
   = auto_discovery_link_tag :atom, posts_url(format: :atom)
   = auto_discovery_link_tag :rss, posts_url(format: :rss)
 
-- cache @posts do
+- cache [@posts, admin_signed_in?] do
   ul.posts
     = render partial: "post", collection: @posts
 
