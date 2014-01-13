@@ -4,6 +4,8 @@ class PostsController < ApplicationController
 
   before_filter :authenticate_admin!, :only => [:new, :create, :edit, :upadte]
 
+  layout "post_show", only: [:show, :new, :edit]
+
   def index
     @posts = Post.order_by_time.page(params[:page]).per(5)
 

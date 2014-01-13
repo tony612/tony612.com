@@ -7,28 +7,25 @@ doctype 5
 
 html
   head
-    title Tony612
+    title
+      = "Tony612 - #{@post.title}"
 
     = stylesheet_link_tag :application, :media => "all"
     = javascript_include_tag :application
     = csrf_meta_tags
     = yield :auto_discovery_feed
-  body#top
-    .legend
-      h1
-        = link_to "Tony.blogs", root_path
-    #sidebar.expanded
-      = render "layouts/sidebar"
-
-    .main
-      p.notice = notice
-      p.alert = alert
+  body
+    .go-home
+      = link_to root_path do
+        span.fa-stack.fa-lg
+          i.fa.fa-circle.fa-stack-2x
+          i.fa.fa-home.fa-stack-1x.fa-inverse
+    .main-post
+      - if notice
+        p.notice = notice
+      - if alert
+        p.alert = alert
       = yield
-      p#back-top
-        a href="#top"
-          span.fa-stack.fa-2x
-            i.fa.fa-square.fa-stack-2x
-            i.fa.fa-arrow-up.fa-stack-1x.fa-inverse
 
 /[if lt IE 7 ]
   = javascript_include_tag '/javascripts/dd_belatedpng.js'
