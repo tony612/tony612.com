@@ -48,22 +48,54 @@ code {
   color: #EE2244;
 }
 
+// Show page
 #post {
+  border-bottom: 1px solid $grey;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+
   h1 {
     font-size: 50px;
     margin-bottom: 10px;
+    font-family: Times, serif;
+    &.title {
+      text-align: center;
+    }
   }
 
+  .info {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: "Times New Roman", Times, serif;
+  }
   .article {
     padding-top: 20px;
+    font-family: $lucida-grande;
     a {
       color: #1695b9;
       text-decoration: underline;
       font-style: italic;
     }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: $georgia;
+    }
   }
+}
 
-  border-bottom: 1px solid $grey;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+.main-post {
+  width: 60%;
+  margin: auto;
+}
+
+.go-home {
+  position: fixed;
+  margin: 10px;
+  a {
+    opacity: 0.5;
+  }
+  a:hover {
+    opacity: 1;
+    color: #000;
+  }
 }
