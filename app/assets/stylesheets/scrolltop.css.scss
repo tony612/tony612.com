@@ -1,45 +1,34 @@
 /*
 Back to top button
-*/
+ */
 #back-top {
-	position: fixed;
-	bottom: 0px;
+  position: fixed;
+  bottom: 0px;
   margin: 0;
-	margin-left: -70px;
+  margin-left: -70px;
   float: left;
 }
 #back-top a {
-	width: 48px;
-	display: block;
-	text-align: center;
-	font: 11px/100% Arial, Helvetica, sans-serif;
-	text-transform: uppercase;
-	text-decoration: none;
-	color: #bbb;
-	/* background color transition */
-	-webkit-transition: 1s;
-	-moz-transition: 1s;
-	transition: 1s;
-}
-#back-top a:hover {
-	color: #000;
-}
-/* arrow icon (span tag) */
-#back-top span {
-	width: 48px;
-	height: 48px;
-	display: block;
-	margin-bottom: 7px;
-	background: #ddd image-url("up-arrow.png") no-repeat center center;
-	/* rounded corners */
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	/* background color transition */
-	-webkit-transition: 1s;
-	-moz-transition: 1s;
-	transition: 1s;
+  width: 48px;
+  display: block;
+  text-align: center;
+  font: 11px/100% Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #bbb;
+  /* background color transition */
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+  span {
+    opacity: 0.5;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+  }
 }
 #back-top a:hover span {
-	background-color: #777;
+  opacity: 0.8;
 }
+/* arrow icon (span tag) */
