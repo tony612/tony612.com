@@ -39,12 +39,17 @@ a{
   margin-top:-50px;
   width: 70%;
   float: right;
-  margin-right: 50px;
+  margin-right: 10px;
   font-size: 60px;
+  font-family: $verdana;
   a:hover {
     color: black;
     opacity: 0.7;
   }
+}
+
+.title {
+  font-family: $georgia;
 }
 
 .info {
@@ -53,6 +58,7 @@ a{
   color: #aaa;
   font-size:15px;
   font-style: italic;
+  font-family: $georgia;
 }
 
 .debug {
