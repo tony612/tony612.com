@@ -4,7 +4,7 @@
       h1
         = link_to post.title, post
     .info
-      = post.created_at.to_date.to_formatted_s(:long)
+      = post.created_at.to_date.strftime('%b %e, %Y')
       '
       - if admin_signed_in?
         = link_to "edit", edit_post_path(post)
@@ -13,5 +13,3 @@
 
     .content
       = raw (post.excerpt_markdown || post.markdown_html[0..500])
-    .more
-      = link_to "More->", post
