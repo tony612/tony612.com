@@ -1,0 +1,55 @@
+$photo_size: 100px;
+@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+#sidebar {
+  &, a {
+    color: #FFF;
+  }
+}
+#sidebar.expanded {
+  width: 20%;
+  background-color: #31373e;
+  position: fixed;
+  height: 100%;
+  @include box-shadow(inset -5px 0px 10px -0px #000000);
+  .photo {
+    width: $photo_size;
+    margin: 100px auto 60px auto;
+  }
+  .photo img {
+    width: $photo_size;
+    height: $photo_size;
+    @include border-top-radius($photo_size/2);
+    @include border-bottom-radius($photo_size/2);
+    @include border-left-radius($photo_size/2);
+    @include border-right-radius($photo_size/2);
+    @include box-shadow(0 0 2px 1px #FFFFFF);
+    border: 2px solid #FFF;
+  }
+  .profile {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.5em;
+    font-style: italic;
+    font-family: $verdana;
+    p {
+      margin: 0;
+    }
+  }
+  .social-links {
+    position: absolute;
+    bottom: 10%;
+    margin-left: 24%;
+    i {
+      margin-right: 20px;
+    }
+  }
+  .admin {
+    position: absolute;
+    bottom: 0;
+  }
+}

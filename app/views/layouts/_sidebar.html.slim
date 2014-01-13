@@ -1,12 +1,23 @@
-ul.unstyled
-  li = link_to "About", about_path
-  li = link_to "Life", life_path
-  li = link_to "Tech", tech_path
-  - (0..14).each do |i|
-    br
+.photo
+  = gravatar_image_tag "h.bing612@gmail.com"
+.profile
+  p How far your heart goes
+  p how far you will
+
+.social-links
+  = link_to "https://github.com/tony612", target: '_blank' do
+    i.fa.fa-github.fa-lg
+  = link_to "https://twitter.com/tony612_han", target: '_blank' do
+    i.fa.fa-twitter.fa-lg
+  = mail_to "h.bing612@gmail.com", target: '_blank' do
+    i.fa.fa-envelope.fa-lg
+  = link_to posts_path(format: :atom), target: '_blank' do
+    i.fa.fa-rss.fa-lg
+
+.admin
   - if admin_signed_in?
-    li = link_to "Write", new_post_path
-    li = link_to "Logout", destroy_admin_session_path, :method => :delete
-  li = link_to "Feed", posts_path(format: :atom)
-  li by Tony
+    = link_to new_post_path do
+      i.fa.fa-pencil-square-o
+    = link_to destroy_admin_session_path, :method => :delete do
+      i.fa.fa-sign-out
 
