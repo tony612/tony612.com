@@ -13,6 +13,9 @@ gem "devise", "~> 3.0.2"
 gem 'redcarpet', '~> 3.0.0'
 gem "pygments.rb", "~> 0.4.2"
 gem 'kaminari', '~> 0.14.1'
+gem 'bourbon'
+gem 'gravatar_image_tag'
+gem 'font-awesome-sass'
 
 # New Relic provides you with deep information about the performance of your web application as it runs in production
 # https://github.com/newrelic/rpm
