@@ -6,16 +6,16 @@ gem "rails", "~> 4.0.2"
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'slim-rails', '~> 2.0.3'
+gem 'slim-rails', '~> 2.0.4'
 gem 'jquery-rails', '~> 3.0.4'
 gem "simple_form", "~> 3.0.1"
 gem "devise", "~> 3.0.2"
 gem 'redcarpet', '~> 3.0.0'
 gem "pygments.rb", "~> 0.4.2"
-gem 'kaminari', '~> 0.14.1'
-gem 'bourbon'
-gem 'gravatar_image_tag'
-gem 'font-awesome-sass'
+gem 'kaminari', '~> 0.15.1'
+gem 'bourbon', '~> 3.1.8'
+gem 'gravatar_image_tag', '~> 1.2.0'
+gem 'font-awesome-sass', '~> 4.0.2'
 
 # New Relic provides you with deep information about the performance of your web application as it runs in production
 # https://github.com/newrelic/rpm
@@ -28,7 +28,7 @@ gem "newrelic_rpm", "~> 3.6.6.147"
 #gem "rvm-capistrano"
 
 # For rails 4
-gem 'turbolinks', "~> 1.3.1"
+gem 'turbolinks', "~> 2.2.0"
 
 group :development, :test do
   gem 'sqlite3'
