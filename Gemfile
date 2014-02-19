@@ -1,7 +1,7 @@
 # source 'https://rubygems.org'
 source 'http://ruby.taobao.org'
 
-gem "rails", "~> 4.0.2"
+gem "rails", "~> 4.0.3"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -28,7 +28,7 @@ gem "newrelic_rpm", "~> 3.6.6.147"
 #gem "rvm-capistrano"
 
 # For rails 4
-gem 'turbolinks', "~> 2.2.0"
+gem 'turbolinks', "~> 2.2.1"
 
 group :development, :test do
   gem 'sqlite3'
@@ -48,8 +48,8 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem "sass-rails", "~> 4.0.0"
-  gem "coffee-rails", "~> 4.0.0"
+  gem "sass-rails", "~> 4.0.1"
+  gem "coffee-rails", "~> 4.0.1"
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', "~> 0.10.2", :platforms => :ruby
