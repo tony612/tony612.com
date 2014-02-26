@@ -43,6 +43,8 @@ end
 
 group :production do
   gem 'pg', '~> 0.15.1'
+  gem "unicorn"
+  gem 'god'
 end
 
 # Gems used only for assets and not required
