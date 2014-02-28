@@ -18,6 +18,6 @@
   - if admin_signed_in?
     = link_to new_post_path do
       i.fa.fa-pencil-square-o
-    = link_to destroy_admin_session_path, :method => :delete do
+    = link_to destroy_sessions_path, :method => :delete do
       i.fa.fa-sign-out
 
