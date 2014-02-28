@@ -1,0 +1,23 @@
+God::Contacts::Email.defaults do |d|
+  d.from_email = 'god@vagrant'
+  d.from_name = 'God'
+  d.delivery_method = :sendmail
+end
+
+God.contact(:email) do |c|
+  c.name = 'Alfuken'
+  c.group = 'me'
+  c.to_email = 'alfuken@gmail.com'
+end
+
+# God::Contacts::Jabber.defaults do |d|
+#   d.host = "jabber.synbioz.com"
+#   d.from_jid = "foo@synbioz.com"
+#   d.password = "bar"
+# end
+# 
+# God.contact(:jabber) do |c|
+#   d.to_jid = "alfuken@gmail.com"
+# end
+
+God.load "<%= config_path %>/god/*.god"

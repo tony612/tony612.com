@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+#
+# God
+#
+# chkconfig: - 85 15
+# description: start, stop, restart, status for God
+#
+
+APP_ROOT="<%= "#{deploy_to!}/#{current_path!}" %>"
+RETVAL=0
+GOD_PID="<%= pids_path %>/god.pid"
+GOD_LOG="<%= logs_path %>/god.log"
+GOD_CONF="<%= god_global %>"
+GOD_BIN="<%= god_bin %>"
+
+<%= "source #{rvm_path}" unless rvm_string.nil? %>
+cd $APP_ROOT || exit 1
+<%= "rvm use #{rvm_string}" unless rvm_string.nil? %>
+
+case "$1" in
+    start)
+      $GOD_BIN -P $GOD_PID -l $GOD_LOG
+      $GOD_BIN load $GOD_CONF
+      RETVAL=$?
+      ;;
+    stop)
+      kill `cat $GOD_PID`
+      RETVAL=$?
+      ;;
+    restart)
+      kill `cat $GOD_PID`
+      $GOD_BIN -P $GOD_PID -l $GOD_LOG
+      $GOD_BIN load $GOD_CONF
+      RETVAL=$?
+      ;;
+    status)
+      $GOD_BIN status
+      RETVAL=$?
+      ;;
+    *)
+      echo "Usage: god {start|stop|restart|status}"
+      exit 1
+  ;;
+esac
+
+exit $RETVAL
