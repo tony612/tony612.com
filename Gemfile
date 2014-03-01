@@ -24,6 +24,7 @@ gem "newrelic_rpm", "~> 3.6.6.147"
 gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 
 gem "figaro", "~> 0.7.0"
+gem 'annotate', ">=2.6.0"
 
 # Deploy
 #gem "capistrano", "~> 2.14.2"
@@ -38,7 +39,8 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'thin', "~> 1.5.1"
-  #gem 'factory_girl_rails'
+  gem "factory_girl_rails", "~> 4.0"
+   gem 'guard-rspec', require: false
   #gem 'faker'
   gem 'pry-debugger', "~> 0.2.2"
   gem 'pry-rails', "~> 0.2.2"
