@@ -24,7 +24,11 @@ class Post < ActiveRecord::Base
   include Markdown
 
   def to_param
-    "#{id}-#{CGI::escape(title.gsub(/\s+/, '-').gsub(/\.+/, '-'))}"
+    "#{id}-#{title_url}"
+  end
+
+  def title_url
+    title.parameterize
   end
 
   before_save :generate_markdown_html
