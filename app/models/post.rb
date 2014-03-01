@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id               :integer          not null, primary key
+#  title            :string(255)      not null
+#  content          :text             not null
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  category         :string(255)
+#  excerpt          :text
+#  excerpt_markdown :text
+#  markdown_html    :text
+#
+
 class Post < ActiveRecord::Base
 
   validates_presence_of :title, :content
