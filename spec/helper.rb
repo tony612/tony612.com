@@ -1,8 +1,17 @@
-# This file is copied to spec/ when you run 'rails generate rspec:install'
+require 'simplecov'
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  SimpleCov::Formatter::HTMLFormatter
+]
+
+SimpleCov.start do
+  add_filter '/spec/'
+  minimum_coverage(99)
+end
+
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'rspec/autorun'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

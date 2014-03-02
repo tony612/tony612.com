@@ -40,7 +40,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'thin', "~> 1.5.1"
   gem "factory_girl_rails", "~> 4.0"
-   gem 'guard-rspec', require: false
+  gem 'guard-rspec', require: false
+  gem 'simplecov', :require => false
+
   #gem 'faker'
   gem 'pry-debugger', "~> 0.2.2"
   gem 'pry-rails', "~> 0.2.2"
