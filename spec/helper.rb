@@ -6,7 +6,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
 
 SimpleCov.start do
   add_filter '/spec/'
-  minimum_coverage(99)
+  minimum_coverage(85)
 end
 
 ENV["RAILS_ENV"] ||= 'test'
