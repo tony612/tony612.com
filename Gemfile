@@ -1,5 +1,8 @@
-# source 'https://rubygems.org'
-source 'http://ruby.taobao.org'
+if ENV['TRAVIS']
+  source 'https://rubygems.org'
+else
+  source 'http://ruby.taobao.org'
+end
 
 gem "rails", "~> 4.0.3"
 
