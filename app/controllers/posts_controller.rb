@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   respond_to :html, :json
   respond_to :atom, :rss, only: :index
 
-  before_filter :authenticate_admin!, :only => [:new, :create, :edit, :upadte]
+  before_action :authenticate_admin!, :only => [:new, :create, :edit, :update, :destroy]
 
   layout "post_show", only: [:show, :new, :edit]
 
@@ -10,22 +10,6 @@ class PostsController < ApplicationController
     @posts = Post.order_by_time.page(params[:page]).per(5)
 
     respond_with @posts
-  end
-
-  def life
-    @posts = Post.life.page(params[:page]).per(5)
-
-    respond_with @posts do |format|
-      format.html { render :index }
-    end
-  end
-
-  def tech
-    @posts = Post.tech.page(params[:page]).per(5)
-
-    respond_with @posts do |format|
-      format.html { render :index }
-    end
   end
 
   def show
