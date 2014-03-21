@@ -15,6 +15,8 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 
+require 'helper/warden'
+
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
@@ -23,7 +25,38 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
+OmniAuth.config.test_mode = true
+
+def set_auth_back
+  OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+    'provider' => 'github',
+    'uid' => '123545',
+    'info' => {
+      nickname: 'admin',
+      email: 'admin@example.com'
+    }
+  })
+end
+
+set_auth_back
+
+def in_fail_auth
+  OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+    'provider' => 'github',
+    'uid' => '123545',
+    'info' => {
+      nickname: 'foo',
+      email: 'foo@bar.com'
+    }
+  })
+  request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:github]
+  yield
+  set_auth_back
+  request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:github]
+end
+
 RSpec.configure do |config|
+  config.include Warden::Test::ControllerHelpers, type: :controller
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:

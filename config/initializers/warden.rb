@@ -17,11 +17,11 @@ end
 
 Warden::Strategies.add(:github) do
   def valid?
-    env['omniauth.auth'] && env['omniauth.auth'].info
+    request.env['omniauth.auth'] && request.env['omniauth.auth'].info
   end
 
   def authenticate!
-    env_auth = env['omniauth.auth']
+    env_auth = request.env['omniauth.auth']
     if u = User.find_from_user_info([env_auth.info.nickname, env_auth.info.email])
       success!(u)
     else

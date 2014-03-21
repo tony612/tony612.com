@@ -17,4 +17,10 @@ class SessionsController < ApplicationController
     warden.logout
     redirect_to '/', notice: "Logged out"
   end
+
+  protected
+
+  def warden
+    request.env['warden']
+  end
 end

@@ -1,6 +1,9 @@
 require 'helper'
 
 describe SessionsController do
+  before do
+    request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:github]
+  end
   describe '#new' do
     it 'redirects to github auth' do
       get :new
@@ -10,9 +13,6 @@ describe SessionsController do
 
   describe '#create' do
     it 'authenticates github' do
-      warden = double(authenticate!: {})
-      expect(controller).to receive(:warden).and_return(warden)
-      expect(warden).to receive(:authenticate!).with(:github)
       get :create, provider: 'github'
       expect(response).to redirect_to('/')
     end
@@ -20,16 +20,15 @@ describe SessionsController do
 
   describe '#unauthenticated' do
     it 'log the error and redirects' do
-      get :unauthenticated
-      expect(response).to redirect_to('/')
+      in_fail_auth do
+        get :create, provider: 'github'
+        expect(response).to redirect_to('/')
+      end
     end
   end
 
   describe '#destroy' do
     it 'logouts by warden' do
-      warden = double(logout: {})
-      expect(controller).to receive(:warden).and_return(warden)
-      expect(warden).to receive(:logout)
       delete :destroy
       expect(response).to redirect_to('/')
     end
