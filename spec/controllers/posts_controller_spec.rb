@@ -16,6 +16,14 @@ describe PostsController do
     end
   end
 
+  describe "GET show" do
+    it "returns post by id" do
+      post = Post.first
+      get :show, id: post.id
+      expect(assigns(:post).id).to be post.id
+    end
+  end
+
   describe "authenticate_admin" do
     it "before new, create, edit, update, destroy" do
       expect(controller).to receive(:authenticate_admin!).exactly(5).times
