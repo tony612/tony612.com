@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :require_no_authentication, only: [:new, :create]
   def new
     redirect_to '/auth/github'
   end
@@ -22,5 +23,9 @@ class SessionsController < ApplicationController
 
   def warden
     request.env['warden']
+  end
+
+  def require_no_authentication
+    redirect_to root_path if admin_signed_in?
   end
 end

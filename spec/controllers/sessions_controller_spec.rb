@@ -6,14 +6,28 @@ describe SessionsController do
   end
   describe '#new' do
     it 'redirects to github auth' do
+      expect(controller).to receive(:admin_signed_in?).and_return(false)
       get :new
       expect(response).to redirect_to('/auth/github')
+    end
+
+    it 'redirects to root path' do
+      expect(controller).to receive(:admin_signed_in?).and_return(true)
+      get :new
+      expect(response).to redirect_to('/')
     end
   end
 
   describe '#create' do
     it 'authenticates github' do
+      expect(controller).to receive(:admin_signed_in?).and_return(false)
       get :create, provider: 'github'
+      expect(response).to redirect_to('/')
+    end
+
+    it 'redirects to root path' do
+      expect(controller).to receive(:admin_signed_in?).and_return(true)
+      get :new
       expect(response).to redirect_to('/')
     end
   end
